@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 type Language = 'en' | 'th';
@@ -22,9 +21,15 @@ const translations = {
     
     // Home
     'home.welcome': 'Welcome back',
+    'home.how_feeling': 'How are you feeling today?',
     'home.mood_summary': 'Today\'s Mood',
+    'home.mood_happy': 'Feeling Good',
+    'home.mood_neutral': 'Balanced',
+    'home.mood_sad': 'Need Support',
     'home.start_meditation': 'Start Meditation',
     'home.check_mood': 'Check Your Mood',
+    'home.progress_today': 'Your Progress Today',
+    'home.day_streak': 'Day Streak',
     'home.quick_tips': 'Quick Tips for Wellbeing',
     'home.tip_breathing': 'Take 3 deep breaths when feeling stressed',
     'home.tip_nature': 'Spend 10 minutes in nature daily',
@@ -81,6 +86,7 @@ const translations = {
     'button.save': 'Save',
     'button.cancel': 'Cancel',
     'premium.unlock': 'Unlock Premium Content',
+    'premium.benefits': 'Unlimited AI chats & exclusive content',
     'premium.upgrade': 'Upgrade Now'
   },
   th: {
@@ -93,9 +99,15 @@ const translations = {
     
     // Home
     'home.welcome': 'ยินดีต้อนรับกลับมา',
+    'home.how_feeling': 'วันนี้คุณรู้สึกอย่างไร?',
     'home.mood_summary': 'อารมณ์วันนี้',
+    'home.mood_happy': 'รู้สึกดี',
+    'home.mood_neutral': 'สมดุล',
+    'home.mood_sad': 'ต้องการความช่วยเหลือ',
     'home.start_meditation': 'เริ่มการทำสมาธิ',
     'home.check_mood': 'ตรวจสอบอารมณ์',
+    'home.progress_today': 'ความก้าวหน้าวันนี้',
+    'home.day_streak': 'วันต่อเนื่อง',
     'home.quick_tips': 'เคล็ดลับเพื่อสุขภาพจิต',
     'home.tip_breathing': 'หายใจลึกๆ 3 ครั้งเมื่อรู้สึกเครียด',
     'home.tip_nature': 'ใช้เวลา 10 นาทีในธรรมชาติทุกวัน',
@@ -152,6 +164,7 @@ const translations = {
     'button.save': 'บันทึก',
     'button.cancel': 'ยกเลิก',
     'premium.unlock': 'ปลดล็อกเนื้อหาพรีเมียม',
+    'premium.benefits': 'แชท AI ไม่จำกัดและเนื้อหาพิเศษ',
     'premium.upgrade': 'อัพเกรดตอนนี้'
   }
 };
