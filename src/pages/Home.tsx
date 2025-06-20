@@ -8,6 +8,7 @@ import QuickActions from "@/components/Home/QuickActions";
 import ProgressOverview from "@/components/Home/ProgressOverview";
 import QuickTips from "@/components/Home/QuickTips";
 import PremiumCTA from "@/components/Home/PremiumCTA";
+import StressLevelCard from "@/components/Home/StressLevelCard";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -37,6 +38,8 @@ const Home = () => {
       <HomeHeader userName={userName} />
       
       <MoodSummary onUpdateMood={handleUpdateMood} />
+      
+      <StressLevelCard />
       
       <QuickActions 
         onStartMeditation={handleStartMeditation}
