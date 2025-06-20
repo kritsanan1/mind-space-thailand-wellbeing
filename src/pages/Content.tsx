@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -236,7 +235,7 @@ const Content = () => {
                           </span>
                         </div>
                         
-                        <Badge size="sm" className={getCategoryColor(session.category)}>
+                        <Badge className={getCategoryColor(session.category)}>
                           {getCategoryIcon(session.category)}
                           <span className="ml-1 capitalize">{session.category}</span>
                         </Badge>
@@ -323,7 +322,7 @@ const Content = () => {
                 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <Badge size="sm" className={getCategoryColor(article.category)}>
+                    <Badge className={getCategoryColor(article.category)}>
                       {getCategoryIcon(article.category)}
                       <span className="ml-1 capitalize">{article.category}</span>
                     </Badge>

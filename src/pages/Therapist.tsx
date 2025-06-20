@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -184,7 +183,7 @@ const Therapist = () => {
                 {/* Specializations */}
                 <div className="flex flex-wrap gap-1 mb-3">
                   {therapist.specializations.map((spec) => (
-                    <Badge key={spec} size="sm" className="bg-mind-blue-100 text-mind-blue-600">
+                    <Badge key={spec} className="bg-mind-blue-100 text-mind-blue-600">
                       {spec}
                     </Badge>
                   ))}
