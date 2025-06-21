@@ -9,6 +9,83 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      ai_chat_messages: {
+        Row: {
+          id: string
+          is_from_user: boolean
+          message_metadata: Json | null
+          message_text: string
+          mood_detected: string | null
+          sentiment_score: number | null
+          session_id: string | null
+          timestamp: string | null
+        }
+        Insert: {
+          id?: string
+          is_from_user: boolean
+          message_metadata?: Json | null
+          message_text: string
+          mood_detected?: string | null
+          sentiment_score?: number | null
+          session_id?: string | null
+          timestamp?: string | null
+        }
+        Update: {
+          id?: string
+          is_from_user?: boolean
+          message_metadata?: Json | null
+          message_text?: string
+          mood_detected?: string | null
+          sentiment_score?: number | null
+          session_id?: string | null
+          timestamp?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ai_chat_messages_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "ai_chat_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      ai_chat_sessions: {
+        Row: {
+          ai_recommendations: string[] | null
+          created_at: string | null
+          id: string
+          language_used: string | null
+          mood_analysis: Json | null
+          session_end: string | null
+          session_start: string | null
+          session_summary: string | null
+          user_id: string | null
+        }
+        Insert: {
+          ai_recommendations?: string[] | null
+          created_at?: string | null
+          id?: string
+          language_used?: string | null
+          mood_analysis?: Json | null
+          session_end?: string | null
+          session_start?: string | null
+          session_summary?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          ai_recommendations?: string[] | null
+          created_at?: string | null
+          id?: string
+          language_used?: string | null
+          mood_analysis?: Json | null
+          session_end?: string | null
+          session_start?: string | null
+          session_summary?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       appointments: {
         Row: {
           appointment_date: string
@@ -116,6 +193,57 @@ export type Database = {
         }
         Relationships: []
       }
+      daily_moods: {
+        Row: {
+          activities_done: string[] | null
+          afternoon_mood: string | null
+          created_at: string | null
+          date: string
+          energy_level: number | null
+          evening_mood: string | null
+          gratitude_notes: string | null
+          id: string
+          mood_notes: string | null
+          morning_mood: string | null
+          overall_mood: string | null
+          sleep_quality: number | null
+          stress_level: number | null
+          user_id: string | null
+        }
+        Insert: {
+          activities_done?: string[] | null
+          afternoon_mood?: string | null
+          created_at?: string | null
+          date: string
+          energy_level?: number | null
+          evening_mood?: string | null
+          gratitude_notes?: string | null
+          id?: string
+          mood_notes?: string | null
+          morning_mood?: string | null
+          overall_mood?: string | null
+          sleep_quality?: number | null
+          stress_level?: number | null
+          user_id?: string | null
+        }
+        Update: {
+          activities_done?: string[] | null
+          afternoon_mood?: string | null
+          created_at?: string | null
+          date?: string
+          energy_level?: number | null
+          evening_mood?: string | null
+          gratitude_notes?: string | null
+          id?: string
+          mood_notes?: string | null
+          morning_mood?: string | null
+          overall_mood?: string | null
+          sleep_quality?: number | null
+          stress_level?: number | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       feedback: {
         Row: {
           created_at: string | null
@@ -186,6 +314,63 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      meditation_content: {
+        Row: {
+          audio_url_en: string | null
+          audio_url_th: string | null
+          background_image_url: string | null
+          created_at: string | null
+          cultural_context: string | null
+          description_en: string | null
+          description_th: string | null
+          difficulty_level: number | null
+          duration_minutes: number
+          id: string
+          instructor_name: string | null
+          is_premium: boolean | null
+          meditation_type: string
+          tags: string[] | null
+          title_en: string
+          title_th: string
+        }
+        Insert: {
+          audio_url_en?: string | null
+          audio_url_th?: string | null
+          background_image_url?: string | null
+          created_at?: string | null
+          cultural_context?: string | null
+          description_en?: string | null
+          description_th?: string | null
+          difficulty_level?: number | null
+          duration_minutes: number
+          id?: string
+          instructor_name?: string | null
+          is_premium?: boolean | null
+          meditation_type: string
+          tags?: string[] | null
+          title_en: string
+          title_th: string
+        }
+        Update: {
+          audio_url_en?: string | null
+          audio_url_th?: string | null
+          background_image_url?: string | null
+          created_at?: string | null
+          cultural_context?: string | null
+          description_en?: string | null
+          description_th?: string | null
+          difficulty_level?: number | null
+          duration_minutes?: number
+          id?: string
+          instructor_name?: string | null
+          is_premium?: boolean | null
+          meditation_type?: string
+          tags?: string[] | null
+          title_en?: string
+          title_th?: string
+        }
+        Relationships: []
       }
       mood_entries: {
         Row: {
@@ -305,7 +490,9 @@ export type Database = {
           onboarding_completed: boolean | null
           preferred_language: string | null
           premium_member: boolean | null
+          streak_count: number | null
           updated_at: string | null
+          wellness_score: number | null
         }
         Insert: {
           avatar_url?: string | null
@@ -317,7 +504,9 @@ export type Database = {
           onboarding_completed?: boolean | null
           preferred_language?: string | null
           premium_member?: boolean | null
+          streak_count?: number | null
           updated_at?: string | null
+          wellness_score?: number | null
         }
         Update: {
           avatar_url?: string | null
@@ -329,7 +518,9 @@ export type Database = {
           onboarding_completed?: boolean | null
           preferred_language?: string | null
           premium_member?: boolean | null
+          streak_count?: number | null
           updated_at?: string | null
+          wellness_score?: number | null
         }
         Relationships: []
       }
@@ -513,6 +704,7 @@ export type Database = {
       therapists: {
         Row: {
           availability: Json | null
+          availability_schedule: Json | null
           bio_en: string | null
           bio_th: string | null
           created_at: string | null
@@ -520,15 +712,24 @@ export type Database = {
           email: string
           full_name: string
           hourly_rate: number | null
+          hourly_rate_thb: number | null
           id: string
           is_verified: boolean | null
           languages: string[] | null
+          languages_spoken: string[] | null
+          location_province: string | null
+          offers_in_person_sessions: boolean | null
+          offers_online_sessions: boolean | null
           phone: string | null
           profile_image_url: string | null
+          rating: number | null
           specializations: string[] | null
+          total_reviews: number | null
+          years_of_experience: number | null
         }
         Insert: {
           availability?: Json | null
+          availability_schedule?: Json | null
           bio_en?: string | null
           bio_th?: string | null
           created_at?: string | null
@@ -536,15 +737,24 @@ export type Database = {
           email: string
           full_name: string
           hourly_rate?: number | null
+          hourly_rate_thb?: number | null
           id?: string
           is_verified?: boolean | null
           languages?: string[] | null
+          languages_spoken?: string[] | null
+          location_province?: string | null
+          offers_in_person_sessions?: boolean | null
+          offers_online_sessions?: boolean | null
           phone?: string | null
           profile_image_url?: string | null
+          rating?: number | null
           specializations?: string[] | null
+          total_reviews?: number | null
+          years_of_experience?: number | null
         }
         Update: {
           availability?: Json | null
+          availability_schedule?: Json | null
           bio_en?: string | null
           bio_th?: string | null
           created_at?: string | null
@@ -552,44 +762,126 @@ export type Database = {
           email?: string
           full_name?: string
           hourly_rate?: number | null
+          hourly_rate_thb?: number | null
           id?: string
           is_verified?: boolean | null
           languages?: string[] | null
+          languages_spoken?: string[] | null
+          location_province?: string | null
+          offers_in_person_sessions?: boolean | null
+          offers_online_sessions?: boolean | null
           phone?: string | null
           profile_image_url?: string | null
+          rating?: number | null
           specializations?: string[] | null
+          total_reviews?: number | null
+          years_of_experience?: number | null
         }
         Relationships: []
       }
       user_achievements: {
         Row: {
           achievement_name: string
+          achievement_name_en: string | null
+          achievement_name_th: string | null
           achievement_type: string
           description: string | null
+          description_en: string | null
+          description_th: string | null
           earned_at: string | null
+          icon_name: string | null
           id: string
+          is_milestone: boolean | null
           points: number | null
+          points_earned: number | null
+          unlocked_at: string | null
           user_id: string
         }
         Insert: {
           achievement_name: string
+          achievement_name_en?: string | null
+          achievement_name_th?: string | null
           achievement_type: string
           description?: string | null
+          description_en?: string | null
+          description_th?: string | null
           earned_at?: string | null
+          icon_name?: string | null
           id?: string
+          is_milestone?: boolean | null
           points?: number | null
+          points_earned?: number | null
+          unlocked_at?: string | null
           user_id: string
         }
         Update: {
           achievement_name?: string
+          achievement_name_en?: string | null
+          achievement_name_th?: string | null
           achievement_type?: string
           description?: string | null
+          description_en?: string | null
+          description_th?: string | null
           earned_at?: string | null
+          icon_name?: string | null
           id?: string
+          is_milestone?: boolean | null
           points?: number | null
+          points_earned?: number | null
+          unlocked_at?: string | null
           user_id?: string
         }
         Relationships: []
+      }
+      user_meditation_sessions: {
+        Row: {
+          completed_at: string | null
+          completion_percentage: number | null
+          duration_minutes: number | null
+          id: string
+          meditation_content_id: string | null
+          mood_after: string | null
+          mood_before: string | null
+          session_notes: string | null
+          started_at: string | null
+          user_id: string | null
+          was_interrupted: boolean | null
+        }
+        Insert: {
+          completed_at?: string | null
+          completion_percentage?: number | null
+          duration_minutes?: number | null
+          id?: string
+          meditation_content_id?: string | null
+          mood_after?: string | null
+          mood_before?: string | null
+          session_notes?: string | null
+          started_at?: string | null
+          user_id?: string | null
+          was_interrupted?: boolean | null
+        }
+        Update: {
+          completed_at?: string | null
+          completion_percentage?: number | null
+          duration_minutes?: number | null
+          id?: string
+          meditation_content_id?: string | null
+          mood_after?: string | null
+          mood_before?: string | null
+          session_notes?: string | null
+          started_at?: string | null
+          user_id?: string | null
+          was_interrupted?: boolean | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_meditation_sessions_meditation_content_id_fkey"
+            columns: ["meditation_content_id"]
+            isOneToOne: false
+            referencedRelation: "meditation_content"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       users: {
         Row: {
