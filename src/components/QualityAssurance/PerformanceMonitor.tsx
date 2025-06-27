@@ -24,7 +24,7 @@ const PerformanceMonitor = () => {
       const memory = (performance as any).memory;
       
       setMetrics({
-        loadTime: Math.round(navigation.loadEventEnd - navigation.navigationStart),
+        loadTime: Math.round(navigation.loadEventEnd - navigation.fetchStart),
         renderTime: Math.round(navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart),
         memoryUsage: memory ? Math.round(memory.usedJSHeapSize / 1024 / 1024) : 0,
         networkRequests: performance.getEntriesByType('resource').length

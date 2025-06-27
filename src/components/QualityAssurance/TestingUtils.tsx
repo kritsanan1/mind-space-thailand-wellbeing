@@ -71,7 +71,7 @@ const TestingUtils = () => {
         description: 'Verify page load performance',
         test: async () => {
           const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-          const loadTime = navigation.loadEventEnd - navigation.navigationStart;
+          const loadTime = navigation.loadEventEnd - navigation.fetchStart;
           return loadTime < 5000; // Less than 5 seconds
         },
         status: 'pending'
