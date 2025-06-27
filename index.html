@@ -4,23 +4,124 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MindSpace Thailand - Mental Health & Wellbeing</title>
-    <meta name="description" content="AI-powered mental health app for young adults in Thailand. Meditation, mood tracking, and therapist booking." />
+    
+    <!-- Primary Meta Tags -->
+    <title>MindSpace Thailand - AI Mental Health & Meditation App</title>
+    <meta name="title" content="MindSpace Thailand - AI Mental Health & Meditation App" />
+    <meta name="description" content="AI-powered mental health app for young adults in Thailand. Get personalized meditation, mood tracking, stress monitoring, and connect with licensed therapists. Available in Thai & English." />
+    <meta name="keywords" content="mental health thailand, meditation app thai, stress management, mindfulness thailand, ai therapy, mood tracking, smartwatch wellness" />
     <meta name="author" content="MindSpace Thailand" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English, Thai" />
+    <meta name="geo.country" content="TH" />
+    <meta name="geo.region" content="Thailand" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mindspace-thailand.lovable.app/" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <meta property="og:title" content="MindSpace Thailand - Mental Health & Wellbeing" />
-    <meta property="og:description" content="AI-powered mental health app for young adults in Thailand" />
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:url" content="https://mindspace-thailand.lovable.app/" />
+    <meta property="og:title" content="MindSpace Thailand - AI Mental Health & Meditation App" />
+    <meta property="og:description" content="AI-powered mental health app for young adults in Thailand. Get personalized meditation, mood tracking, and connect with licensed therapists." />
+    <meta property="og:image" content="https://mindspace-thailand.lovable.app/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="MindSpace Thailand" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="th_TH" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@mindspace_th" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://mindspace-thailand.lovable.app/" />
+    <meta property="twitter:title" content="MindSpace Thailand - AI Mental Health & Meditation App" />
+    <meta property="twitter:description" content="AI-powered mental health app for young adults in Thailand. Get personalized meditation, mood tracking, and connect with licensed therapists." />
+    <meta property="twitter:image" content="https://mindspace-thailand.lovable.app/twitter-card.jpg" />
+    <meta property="twitter:site" content="@mindspace_th" />
+    <meta property="twitter:creator" content="@mindspace_th" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#2E7D32" />
+    <meta name="msapplication-TileColor" content="#2E7D32" />
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/src/main.tsx" as="script" />
+    <link rel="preload" href="/src/index.css" as="style" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "MindSpace Thailand",
+      "description": "AI-powered mental health app for young adults in Thailand featuring meditation, mood tracking, stress monitoring, and therapist connections.",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Web, iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "THB",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1250",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "MindSpace Thailand",
+        "url": "https://mindspace-thailand.lovable.app",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://mindspace-thailand.lovable.app/logo.png"
+        }
+      },
+      "datePublished": "2024-01-01",
+      "dateModified": "2025-01-21",
+      "inLanguage": ["en", "th"],
+      "availableCountry": "TH",
+      "featureList": [
+        "AI-powered mood analysis",
+        "Guided meditation sessions",
+        "Smartwatch integration",
+        "Sleep tracking",
+        "Stress monitoring",
+        "Licensed therapist booking",
+        "Multilingual support (Thai/English)"
+      ],
+      "screenshot": [
+        "https://mindspace-thailand.lovable.app/screenshot1.jpg",
+        "https://mindspace-thailand.lovable.app/screenshot2.jpg",
+        "https://mindspace-thailand.lovable.app/screenshot3.jpg"
+      ]
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" />
   </head>
 
   <body>

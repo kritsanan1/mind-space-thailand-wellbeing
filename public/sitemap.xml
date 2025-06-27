@@ -1,0 +1,98 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://mindspace-thailand.lovable.app/</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mindspace-thailand.lovable.app/" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://mindspace-thailand.lovable.app/?lang=th" />
+  </url>
+
+  <!-- Onboarding -->
+  <url>
+    <loc>https://mindspace-thailand.lovable.app/onboarding</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mindspace-thailand.lovable.app/onboarding" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://mindspace-thailand.lovable.app/onboarding?lang=th" />
+  </url>
+
+  <!-- Home Dashboard -->
+  <url>
+    <loc>https://mindspace-thailand.lovable.app/home</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mindspace-thailand.lovable.app/home" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://mindspace-thailand.lovable.app/home?lang=th" />
+  </url>
+
+  <!-- AI Chat -->
+  <url>
+    <loc>https://mindspace-thailand.lovable.app/chat</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mindspace-thailand.lovable.app/chat" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://mindspace-thailand.lovable.app/chat?lang=th" />
+  </url>
+
+  <!-- Content Library -->
+  <url>
+    <loc>https://mindspace-thailand.lovable.app/content</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mindspace-thailand.lovable.app/content" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://mindspace-thailand.lovable.app/content?lang=th" />
+  </url>
+
+  <!-- Meditation Sessions -->
+  <url>
+    <loc>https://mindspace-thailand.lovable.app/meditation/breathing</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://mindspace-thailand.lovable.app/meditation/mindfulness</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mindspace-thailand.lovable.app/meditation/sleep</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Therapist Directory -->
+  <url>
+    <loc>https://mindspace-thailand.lovable.app/therapist</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mindspace-thailand.lovable.app/therapist" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://mindspace-thailand.lovable.app/therapist?lang=th" />
+  </url>
+
+  <!-- Profile -->
+  <url>
+    <loc>https://mindspace-thailand.lovable.app/profile</loc>
+    <lastmod>2025-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mindspace-thailand.lovable.app/profile" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://mindspace-thailand.lovable.app/profile?lang=th" />
+  </url>
+
+</urlset>

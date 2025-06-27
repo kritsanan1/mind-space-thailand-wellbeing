@@ -86,6 +86,50 @@ export type Database = {
         }
         Relationships: []
       }
+      album_photos: {
+        Row: {
+          album_id: string
+          created_at: string
+          file_name: string
+          file_size: number
+          file_type: string
+          id: string
+          storage_path: string
+          thumbnail_url: string | null
+          upload_url: string
+        }
+        Insert: {
+          album_id: string
+          created_at?: string
+          file_name: string
+          file_size: number
+          file_type: string
+          id?: string
+          storage_path: string
+          thumbnail_url?: string | null
+          upload_url: string
+        }
+        Update: {
+          album_id?: string
+          created_at?: string
+          file_name?: string
+          file_size?: number
+          file_type?: string
+          id?: string
+          storage_path?: string
+          thumbnail_url?: string | null
+          upload_url?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "album_photos_album_id_fkey"
+            columns: ["album_id"]
+            isOneToOne: false
+            referencedRelation: "photo_albums"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       appointments: {
         Row: {
           appointment_date: string
@@ -132,6 +176,314 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      chat_messages: {
+        Row: {
+          created_at: string
+          id: string
+          message: string
+          message_type: string | null
+          room_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          message: string
+          message_type?: string | null
+          room_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          message?: string
+          message_type?: string | null
+          room_id?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      client_enquiries: {
+        Row: {
+          additional_information: string | null
+          budget_range: string | null
+          company_name: string | null
+          contact_email: string
+          contact_name: string
+          contact_phone: string | null
+          created_at: string
+          design_preferences: string | null
+          desired_features: string
+          id: string
+          notion_page_id: string | null
+          submission_status: string | null
+          target_audience: string
+          timeline: string | null
+        }
+        Insert: {
+          additional_information?: string | null
+          budget_range?: string | null
+          company_name?: string | null
+          contact_email: string
+          contact_name: string
+          contact_phone?: string | null
+          created_at?: string
+          design_preferences?: string | null
+          desired_features: string
+          id?: string
+          notion_page_id?: string | null
+          submission_status?: string | null
+          target_audience: string
+          timeline?: string | null
+        }
+        Update: {
+          additional_information?: string | null
+          budget_range?: string | null
+          company_name?: string | null
+          contact_email?: string
+          contact_name?: string
+          contact_phone?: string | null
+          created_at?: string
+          design_preferences?: string | null
+          desired_features?: string
+          id?: string
+          notion_page_id?: string | null
+          submission_status?: string | null
+          target_audience?: string
+          timeline?: string | null
+        }
+        Relationships: []
+      }
+      community_comments: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          is_anonymous: boolean | null
+          post_id: string
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          is_anonymous?: boolean | null
+          post_id: string
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          is_anonymous?: boolean | null
+          post_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "community_comments_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "community_posts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      community_likes: {
+        Row: {
+          created_at: string
+          id: string
+          post_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          post_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          post_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "community_likes_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "community_posts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      community_posts: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          is_anonymous: boolean | null
+          support_group: string | null
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          is_anonymous?: boolean | null
+          support_group?: string | null
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          is_anonymous?: boolean | null
+          support_group?: string | null
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      complaint_feedback: {
+        Row: {
+          comment: string | null
+          complaint_id: string | null
+          created_at: string | null
+          id: string
+          rating: number | null
+          user_id: string | null
+        }
+        Insert: {
+          comment?: string | null
+          complaint_id?: string | null
+          created_at?: string | null
+          id?: string
+          rating?: number | null
+          user_id?: string | null
+        }
+        Update: {
+          comment?: string | null
+          complaint_id?: string | null
+          created_at?: string | null
+          id?: string
+          rating?: number | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "complaint_feedback_complaint_id_fkey"
+            columns: ["complaint_id"]
+            isOneToOne: false
+            referencedRelation: "complaints"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      complaint_votes: {
+        Row: {
+          complaint_id: string
+          created_at: string
+          id: string
+          user_id: string | null
+        }
+        Insert: {
+          complaint_id: string
+          created_at?: string
+          id?: string
+          user_id?: string | null
+        }
+        Update: {
+          complaint_id?: string
+          created_at?: string
+          id?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "complaint_votes_complaint_id_fkey"
+            columns: ["complaint_id"]
+            isOneToOne: false
+            referencedRelation: "complaints"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      complaints: {
+        Row: {
+          admin_response: string | null
+          category: Database["public"]["Enums"]["complaint_category"]
+          complaint_id: string | null
+          created_at: string | null
+          description: string
+          id: string
+          is_anonymous: boolean | null
+          location_lat: number | null
+          location_lng: number | null
+          location_text: string | null
+          phone: string | null
+          photo_url: string | null
+          priority: number | null
+          resolved_at: string | null
+          status: Database["public"]["Enums"]["complaint_status"] | null
+          title: string | null
+          updated_at: string | null
+          user_id: string | null
+          voice_memo_url: string | null
+          vote_count: number | null
+        }
+        Insert: {
+          admin_response?: string | null
+          category: Database["public"]["Enums"]["complaint_category"]
+          complaint_id?: string | null
+          created_at?: string | null
+          description: string
+          id?: string
+          is_anonymous?: boolean | null
+          location_lat?: number | null
+          location_lng?: number | null
+          location_text?: string | null
+          phone?: string | null
+          photo_url?: string | null
+          priority?: number | null
+          resolved_at?: string | null
+          status?: Database["public"]["Enums"]["complaint_status"] | null
+          title?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+          voice_memo_url?: string | null
+          vote_count?: number | null
+        }
+        Update: {
+          admin_response?: string | null
+          category?: Database["public"]["Enums"]["complaint_category"]
+          complaint_id?: string | null
+          created_at?: string | null
+          description?: string
+          id?: string
+          is_anonymous?: boolean | null
+          location_lat?: number | null
+          location_lng?: number | null
+          location_text?: string | null
+          phone?: string | null
+          photo_url?: string | null
+          priority?: number | null
+          resolved_at?: string | null
+          status?: Database["public"]["Enums"]["complaint_status"] | null
+          title?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+          voice_memo_url?: string | null
+          vote_count?: number | null
+        }
+        Relationships: []
       }
       content_library: {
         Row: {
@@ -315,6 +667,33 @@ export type Database = {
           },
         ]
       }
+      journal_entries: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          mood_score: number | null
+          prompt: string
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          mood_score?: number | null
+          prompt: string
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          mood_score?: number | null
+          prompt?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       meditation_content: {
         Row: {
           audio_url_en: string | null
@@ -401,6 +780,79 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      notifications: {
+        Row: {
+          created_at: string | null
+          id: string
+          is_read: boolean | null
+          message: string
+          related_complaint_id: string | null
+          title: string
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          is_read?: boolean | null
+          message: string
+          related_complaint_id?: string | null
+          title: string
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          is_read?: boolean | null
+          message?: string
+          related_complaint_id?: string | null
+          title?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "notifications_related_complaint_id_fkey"
+            columns: ["related_complaint_id"]
+            isOneToOne: false
+            referencedRelation: "complaints"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      photo_albums: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          name: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          name: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          name?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "photo_albums_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       prices: {
         Row: {
@@ -883,6 +1335,39 @@ export type Database = {
           },
         ]
       }
+      user_profiles: {
+        Row: {
+          created_at: string | null
+          full_name: string | null
+          id: string
+          phone_number: string | null
+          points: number | null
+          role: Database["public"]["Enums"]["user_role"] | null
+          updated_at: string | null
+          village: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          full_name?: string | null
+          id: string
+          phone_number?: string | null
+          points?: number | null
+          role?: Database["public"]["Enums"]["user_role"] | null
+          updated_at?: string | null
+          village?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          full_name?: string | null
+          id?: string
+          phone_number?: string | null
+          points?: number | null
+          role?: Database["public"]["Enums"]["user_role"] | null
+          updated_at?: string | null
+          village?: string | null
+        }
+        Relationships: []
+      }
       users: {
         Row: {
           avatar_url: string | null
@@ -916,8 +1401,42 @@ export type Database = {
         Args: { heart_rate: number }
         Returns: string
       }
+      award_points: {
+        Args: { user_uuid: string; points_to_add: number }
+        Returns: undefined
+      }
+      create_notification: {
+        Args: {
+          user_uuid: string
+          notification_title: string
+          notification_message: string
+          complaint_uuid?: string
+        }
+        Returns: undefined
+      }
+      delete_album_photos_from_storage: {
+        Args: { album_uuid: string }
+        Returns: undefined
+      }
+      delete_user_account: {
+        Args: { user_uuid: string }
+        Returns: undefined
+      }
+      generate_complaint_id: {
+        Args: Record<PropertyKey, never>
+        Returns: string
+      }
     }
     Enums: {
+      complaint_category:
+        | "road"
+        | "water"
+        | "waste"
+        | "electricity"
+        | "public_safety"
+        | "environment"
+        | "other"
+      complaint_status: "open" | "in_progress" | "resolved" | "closed"
       pricing_plan_interval: "day" | "week" | "month" | "year"
       pricing_type: "one_time" | "recurring"
       subscription_status:
@@ -928,6 +1447,7 @@ export type Database = {
         | "incomplete_expired"
         | "past_due"
         | "unpaid"
+      user_role: "resident" | "admin" | "official"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -1043,6 +1563,16 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
+      complaint_category: [
+        "road",
+        "water",
+        "waste",
+        "electricity",
+        "public_safety",
+        "environment",
+        "other",
+      ],
+      complaint_status: ["open", "in_progress", "resolved", "closed"],
       pricing_plan_interval: ["day", "week", "month", "year"],
       pricing_type: ["one_time", "recurring"],
       subscription_status: [
@@ -1054,6 +1584,7 @@ export const Constants = {
         "past_due",
         "unpaid",
       ],
+      user_role: ["resident", "admin", "official"],
     },
   },
 } as const
