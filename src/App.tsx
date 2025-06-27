@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -19,6 +18,11 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import MetaTags from "./components/SEO/MetaTags";
 import StructuredData from "./components/SEO/StructuredData";
 import { trackPageView, trackWebVitals } from "./utils/analytics";
+import ErrorBoundary from "./components/ErrorBoundary";
+import PerformanceMonitor from "./components/QualityAssurance/PerformanceMonitor";
+import TestingUtils from "./components/QualityAssurance/TestingUtils";
+import DeploymentChecker from "./components/QualityAssurance/DeploymentChecker";
+import ABTestingPanel from "./components/QualityAssurance/ABTestingPanel";
 
 const queryClient = new QueryClient();
 
@@ -113,25 +117,33 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
         <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <SEOWrapper />
-            <div className="mobile-container">
-              <Routes>
-                <Route path="/" element={hasCompletedOnboarding ? <Home /> : <Index />} />
-                <Route path="/onboarding" element={<Onboarding />} />
-                <Route path="/home" element={<Home />} />
-                <Route path="/chat" element={<AIChat />} />
-                <Route path="/content" element={<Content />} />
-                <Route path="/meditation/:type" element={<Meditation />} />
-                <Route path="/therapist" element={<Therapist />} />
-                <Route path="/therapist/:id/book" element={<TherapistBooking />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </div>
-          </BrowserRouter>
+          <ErrorBoundary>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <SEOWrapper />
+              <div className="mobile-container">
+                <Routes>
+                  <Route path="/" element={hasCompletedOnboarding ? <Home /> : <Index />} />
+                  <Route path="/onboarding" element={<Onboarding />} />
+                  <Route path="/home" element={<Home />} />
+                  <Route path="/chat" element={<AIChat />} />
+                  <Route path="/content" element={<Content />} />
+                  <Route path="/meditation/:type" element={<Meditation />} />
+                  <Route path="/therapist" element={<Therapist />} />
+                  <Route path="/therapist/:id/book" element={<TherapistBooking />} />
+                  <Route path="/profile" element={<Profile />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </div>
+              
+              {/* Quality Assurance Components - Only in Development */}
+              <PerformanceMonitor />
+              <TestingUtils />
+              <DeploymentChecker />
+              <ABTestingPanel />
+            </BrowserRouter>
+          </ErrorBoundary>
         </TooltipProvider>
       </LanguageProvider>
     </QueryClientProvider>
